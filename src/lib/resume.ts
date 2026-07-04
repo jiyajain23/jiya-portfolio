@@ -117,6 +117,7 @@ export const resume = {
         "Developed a multi-modal evaluation pipeline: sentence-transformer embeddings, speech fluency analysis, acoustic confidence features, and MediaPipe-based live nudges — with personalized insights.",
         "Implemented context-injection via dynamic ingestion of resumes, job descriptions, and project docs so the AI adapts its questioning and feedback.",
       ],
+      github: "https://github.com/jiyajain23/speakEZ-jj", 
     },
     {
       name: "Marketplace Product Image Classifier",
@@ -129,6 +130,7 @@ export const resume = {
         "Designed a scalable preprocessing pipeline for 10GB of image data, mitigating class imbalance and improving validation accuracy by 5%.",
         "Deployed the model through an interactive Streamlit application.",
       ],
+      github: "https://github.com/jiyajain23/product_classifier",
     },
     {
       name: "E-commerce Review Helpfulness Predictor",
@@ -140,6 +142,7 @@ export const resume = {
         "Developed a supervised ML model to predict review helpfulness from 500,000+ Amazon reviews using textual & metadata features with cost-sensitive learning at 73% accuracy.",
         "Engineered an NLP pipeline with NLTK, TF-IDF, and N-gram representations for large-scale text processing.",
       ],
+      github: "https://github.com/jiyajain23/helpful_review_prediction",
     },
   ],
   activities: [

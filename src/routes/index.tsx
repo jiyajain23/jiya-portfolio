@@ -662,7 +662,7 @@ function ProjectCard({
               {open ? "hide details" : "peek inside"} <Sparkles className="h-4 w-4" />
             </button>
             <a
-              href={resume.github}
+              href={project.github || resume.github}
               target="_blank"
               rel="noreferrer"
               data-cursor="hover"
