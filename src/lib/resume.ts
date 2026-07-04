@@ -1,0 +1,181 @@
+export const resume = {
+  name: "Jiya Jain",
+  location: "New Delhi, IN",
+  email: "jainjiya2312@gmail.com",
+  phone: "+91 9868357111",
+  linkedin: "https://linkedin.com/in/jiyajain23",
+  github: "https://github.com/jiyajain23",
+  summary:
+    "Computer Science student focused on Machine Learning and AI, with experience building ML pipelines and solving real-world classification problems. Strong in DSA and analytical problem-solving, with a drive to turn theory into impactful solutions.",
+  rotatingTitles: [
+    "ML Engineer in the making",
+    "NLP tinkerer",
+    "DSA problem-solver",
+    "Adversarial-prompt hunter",
+    "CS undergrad @ MSIT",
+  ],
+  education: [
+    {
+      school: "Maharaja Surajmal Institute of Technology",
+      location: "New Delhi, IN",
+      degree: "B.Tech in Computer Science & Engineering",
+      detail: "CGPA: 9.22 / 10.0",
+      period: "Graduating 2028",
+    },
+  ],
+  skills: [
+    {
+      group: "Languages",
+      color: "coral",
+      items: ["Python", "C++", "JavaScript", "HTML/CSS"],
+    },
+    {
+      group: "Machine Learning",
+      color: "lavender",
+      items: [
+        "TensorFlow",
+        "Keras",
+        "Sentence-Transformers",
+        "Scikit-learn",
+        "NLTK",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+      ],
+    },
+    {
+      group: "Backend & Databases",
+      color: "mint",
+      items: [
+        "FastAPI",
+        "Node.js",
+        "REST APIs",
+        "MongoDB",
+        "SQLite",
+        "Firebase",
+        "Prisma",
+        "Streamlit",
+      ],
+    },
+    {
+      group: "Tools & Concepts",
+      color: "sunshine",
+      items: [
+        "Git",
+        "GitHub",
+        "Postman",
+        "Jupyter",
+        "Google Colab",
+        "DSA",
+        "OOP",
+      ],
+    },
+  ],
+  experience: [
+    {
+      role: "Summer Intern — Machine Learning",
+      org: "Airports Authority of India",
+      location: "Safdarjung Airport, New Delhi",
+      period: "June 2026 — Present",
+      color: "coral",
+      bullets: [
+        "Investigating NLP & deep learning methodologies to classify aviation accident reports and improve flight safety.",
+        "Deepening knowledge of core ML algorithms and Large Language Model (LLM) architectures.",
+        "Analyzing data preparation techniques like tokenization and topic modeling for text-heavy datasets.",
+      ],
+    },
+    {
+      role: "AI/ML Intern",
+      org: "DomaiynLabs LLP",
+      location: "Remote",
+      period: "April 2026 — Present",
+      color: "lavender",
+      bullets: [
+        "Conducted AI red-teaming for an early-stage startup, researching LLM vulnerabilities and extracting 250+ adversarial jailbreaks.",
+        "Built an end-to-end firewall layer by training a binary classification model for adversarial prompt detection.",
+        "Contributed to a FastAPI inference backend enabling real-time protection of LLM applications.",
+      ],
+    },
+  ],
+  projects: [
+    {
+      name: "SpeakEZ",
+      tagline: "Real-time AI coaching for workplace scenarios",
+      color: "hotpink",
+      emoji: "🎙️",
+      tech: [
+        "FastAPI",
+        "Node.js",
+        "Gemini Live API",
+        "PyTorch",
+        "sentence-transformers",
+        "MediaPipe",
+        "Prisma",
+      ],
+      details: [
+        "Engineered a real-time AI coaching platform simulating workplace scenarios through low-latency voice interactions using the Gemini Live API on a distributed system.",
+        "Developed a multi-modal evaluation pipeline: sentence-transformer embeddings, speech fluency analysis, acoustic confidence features, and MediaPipe-based live nudges — with personalized insights.",
+        "Implemented context-injection via dynamic ingestion of resumes, job descriptions, and project docs so the AI adapts its questioning and feedback.",
+      ],
+    },
+    {
+      name: "Marketplace Product Image Classifier",
+      tagline: "110k+ images across 42 categories",
+      color: "cyan",
+      emoji: "🛍️",
+      tech: ["Python", "TensorFlow", "MobileNetV2", "Streamlit"],
+      details: [
+        "Built an image classification system using MobileNetV2 transfer learning to categorize 110,000+ marketplace product images across 42 classes at 72.4% accuracy.",
+        "Designed a scalable preprocessing pipeline for 10GB of image data, mitigating class imbalance and improving validation accuracy by 5%.",
+        "Deployed the model through an interactive Streamlit application.",
+      ],
+    },
+    {
+      name: "E-commerce Review Helpfulness Predictor",
+      tagline: "500k+ Amazon reviews, 73% accuracy",
+      color: "lime",
+      emoji: "📝",
+      tech: ["Python", "NLTK", "Logistic Regression", "TF-IDF"],
+      details: [
+        "Developed a supervised ML model to predict review helpfulness from 500,000+ Amazon reviews using textual & metadata features with cost-sensitive learning at 73% accuracy.",
+        "Engineered an NLP pipeline with NLTK, TF-IDF, and N-gram representations for large-scale text processing.",
+      ],
+    },
+  ],
+  activities: [
+    {
+      title: "LinkedIn CoachIn Mentee",
+      period: "Feb 2026 — June 2026",
+      note: "Selected amongst top 100 from 21,000+ applicants",
+      details: [
+        "1:1 technical mentorship with a Senior LinkedIn Software Engineer.",
+        "Mastered DSA through a rigorous curriculum, mock tests, and mock interviews.",
+      ],
+      badge: "🏆",
+      color: "sunshine",
+    },
+    {
+      title: "Codess.cafe Mentee",
+      period: "Oct 2024 — Present",
+      note: "Community for Women in STEM & their ML cohort",
+      details: [],
+      badge: "💫",
+      color: "hotpink",
+    },
+    {
+      title: "Volunteer at Help the Needy",
+      period: "Oct 2024 — Present",
+      note: "Packed and distributed essentials at Old-age homes",
+      details: [],
+      badge: "💖",
+      color: "coral",
+    },
+  ],
+  certifications: [
+    { name: "Advanced Learning Algorithms", org: "DeepLearning.AI", year: "2026", color: "lavender" },
+    { name: "Supervised Learning: Regression & Classification", org: "DeepLearning.AI", year: "2026", color: "mint" },
+    { name: "Mathematics for Machine Learning", org: "DeepLearning.AI", year: "2025", color: "cyan" },
+  ],
+};
+
+export type Resume = typeof resume;
