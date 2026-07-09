@@ -9,17 +9,18 @@ export const resume = {
     "Computer Science student focused on Machine Learning and AI, with experience building ML pipelines and solving real-world classification problems. Strong in DSA and analytical problem-solving, with a drive to turn theory into impactful solutions.",
   rotatingTitles: [
     "ML Engineer in the making",
-    "NLP tinkerer",
+    "NLP & Image recognition",
     "DSA problem-solver",
-    "Adversarial-prompt hunter",
     "CS undergrad @ MSIT",
+    "Building cool stuff",
+    "Experimenting with AI"
   ],
   education: [
     {
       school: "Maharaja Surajmal Institute of Technology",
       location: "New Delhi, IN",
       degree: "B.Tech in Computer Science & Engineering",
-      detail: "CGPA: 9.22 / 10.0",
+      detail: "CGPA: 9.19 / 10.0",
       period: "Graduating 2028",
     },
   ],

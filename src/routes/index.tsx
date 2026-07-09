@@ -234,7 +234,7 @@ function Hero() {
           hi, hello, namaste 👋
         </motion.p>
 
-        <h1 className="font-display text-[clamp(3rem,10vw,8rem)] font-black leading-[0.9] tracking-tight">
+        <h1 className="font-display text-[clamp(3rem,10vw,8rem)] font-black leading-[0.95] tracking-tight pb-2">
           <RevealWord delay={0.1}>I&apos;m</RevealWord>{" "}
           <RevealWord delay={0.25} className="text-coral">
             Jiya
@@ -246,7 +246,7 @@ function Hero() {
 
         <div className="mt-6 flex flex-wrap items-center gap-3 text-2xl md:text-3xl">
           <span className="font-display italic">a</span>
-          <div className="relative h-[1.4em] min-w-[280px] overflow-hidden">
+          <div className="relative h-[1.6em] min-w-[420px] overflow-visible">
             <AnimatePresence mode="wait">
               <motion.span
                 key={titleIdx}
@@ -254,7 +254,7 @@ function Hero() {
                 animate={{ y: 0, opacity: 1, rotate: 0 }}
                 exit={{ y: -40, opacity: 0, rotate: -4 }}
                 transition={{ type: "spring", stiffness: 220, damping: 20 }}
-                className="absolute inset-0 inline-flex items-center rounded-2xl border-2 border-ink bg-sunshine px-4 font-display font-bold"
+                className="absolute inset-0 inline-flex items-center rounded-2xl border-2 border-ink bg-sunshine px-4 font-display font-bold whitespace-nowrap"
               >
                 {resume.rotatingTitles[titleIdx]}
               </motion.span>
@@ -343,7 +343,7 @@ function RevealWord({
   className?: string;
 }) {
   return (
-    <span className="inline-block overflow-hidden align-bottom">
+    <span className="inline-block overflow-visible align-baseline">
       <motion.span
         initial={{ y: "100%" }}
         animate={{ y: 0 }}
