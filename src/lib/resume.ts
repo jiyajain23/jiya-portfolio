@@ -13,7 +13,8 @@ export const resume = {
     "DSA problem-solver",
     "CS undergrad @ MSIT",
     "Building cool stuff",
-    "Experimenting with AI"
+    "Experimenting with AI & RAG",
+    "Diving into Agentic AI"
   ],
   education: [
     {
@@ -31,9 +32,11 @@ export const resume = {
       items: ["Python", "C++", "JavaScript", "HTML/CSS"],
     },
     {
-      group: "Machine Learning",
+      group: "AI & Machine Learning",
       color: "lavender",
       items: [
+        "LangChain",
+        "PyTorch",
         "TensorFlow",
         "Keras",
         "Sentence-Transformers",
@@ -49,21 +52,20 @@ export const resume = {
       color: "mint",
       items: [
         "FastAPI",
+        "ChromaDB",
+        "FAISS",
         "Node.js",
         "REST APIs",
         "MongoDB",
         "SQLite",
-        "Firebase",
-        "Prisma",
-        "Streamlit",
       ],
     },
     {
       group: "Tools & Concepts",
       color: "sunshine",
       items: [
+        "Streamlit",
         "Git",
-        "GitHub",
         "Postman",
         "Jupyter",
         "Google Colab",
@@ -77,28 +79,41 @@ export const resume = {
       role: "Summer Intern — Machine Learning",
       org: "Airports Authority of India",
       location: "Safdarjung Airport, New Delhi",
-      period: "June 2026 — Present",
+      period: "June 2026 — August 2026",
       color: "coral",
       bullets: [
-        "Investigating NLP & deep learning methodologies to classify aviation accident reports and improve flight safety.",
-        "Deepening knowledge of core ML algorithms and Large Language Model (LLM) architectures.",
-        "Analyzing data preparation techniques like tokenization and topic modeling for text-heavy datasets.",
+        "Built a neural network training pipeline from scratch, evaluating activation functions and addressing vanishing gradients.",
+        "Benchmarked custom CNN architecture against transfer-learning for image classification, reducing convergence time by 5×.",
+        "Enhanced an enterprise RAG system by implementing BM25 retrieval, reranking, digital text detection to bypass unnecessary OCR, and model caching with lazy loading, significantly improving retrieval quality and inference latency.",
       ],
     },
     {
       role: "AI/ML Intern",
       org: "DomaiynLabs LLP",
       location: "Remote",
-      period: "April 2026 — Present",
+      period: "April 2026 — July 2026",
       color: "lavender",
       bullets: [
-        "Conducted AI red-teaming for an early-stage startup, researching LLM vulnerabilities and extracting 250+ adversarial jailbreaks.",
-        "Built an end-to-end firewall layer by training a binary classification model for adversarial prompt detection.",
-        "Contributed to a FastAPI inference backend enabling real-time protection of LLM applications.",
+        "Conducted research in AI safety, focusing on adversarial testing, contributing to the development of Bayora, an automated adversarial red teaming platform.",
+        "Prepared research summaries, technical documents & reports.",
+        "Built an end-to-end firewall layer by training, evaluating, and refining a binary classification model for adversarial prompt detection, while contributing to a FastAPI inference backend enabling real-time protection of LLM applications.",
       ],
     },
   ],
   projects: [
+    {
+      name: "Aviation Safety RAG Assistant",
+      tagline: "RAG pipeline for AAI’s ATS manual and ATMC circulars",
+      color: "lime",
+      emoji: "📝",
+      tech: ["Python","LangChain","Llama 3.1","ChromaDB","Cross-Encoder","Streamlit"],
+      details: [
+        "Built a hybrid-retrieval RAG pipeline (BM25 + ChromaDB + cross-encoder reranking) over AAI’s ATS manual and ATMC circulars, resolving ambiguous technical acronyms and improving retrieval precision over vector-only search.",
+        "Designed an ingestion pipeline with PyMuPDF and RapidOCR to parse and index both digital and scanned legacy PDFs, chunking and embedding 670+ pages into a persistent vector store.",
+        "Built automated regression tests using Pytest and an evaluation suite to benchmark retrieval accuracy and prevent context-retrieval failures.",
+      ],
+      github: "https://github.com/jiyajain23/rag-agent-aai",
+    },
     {
       name: "SpeakEZ",
       tagline: "Real-time AI coaching for workplace scenarios",
@@ -133,18 +148,7 @@ export const resume = {
       ],
       github: "https://github.com/jiyajain23/product_classifier",
     },
-    {
-      name: "E-commerce Review Helpfulness Predictor",
-      tagline: "500k+ Amazon reviews, 73% accuracy",
-      color: "lime",
-      emoji: "📝",
-      tech: ["Python", "NLTK", "Logistic Regression", "TF-IDF"],
-      details: [
-        "Developed a supervised ML model to predict review helpfulness from 500,000+ Amazon reviews using textual & metadata features with cost-sensitive learning at 73% accuracy.",
-        "Engineered an NLP pipeline with NLTK, TF-IDF, and N-gram representations for large-scale text processing.",
-      ],
-      github: "https://github.com/jiyajain23/helpful_review_prediction",
-    },
+  
   ],
   activities: [
     {
@@ -154,6 +158,7 @@ export const resume = {
       details: [
         "1:1 technical mentorship with a Senior LinkedIn Software Engineer.",
         "Mastered DSA through a rigorous curriculum, mock tests, and mock interviews.",
+        "Won the internal hackathon amongst 20 teams."
       ],
       badge: "🏆",
       color: "sunshine",
@@ -178,6 +183,9 @@ export const resume = {
   certifications: [
     { name: "Advanced Learning Algorithms", org: "DeepLearning.AI", year: "2026", color: "lavender" },
     { name: "Supervised Learning: Regression & Classification", org: "DeepLearning.AI", year: "2026", color: "mint" },
+    {
+      name:"Fundamentals of AI Agents using RAG and Langchain",org:"IBM",year:"2026",color:"cyan",
+    },
     { name: "Mathematics for Machine Learning", org: "DeepLearning.AI", year: "2025", color: "cyan" },
   ],
 };
