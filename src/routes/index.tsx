@@ -845,13 +845,6 @@ function Contact() {
             color="coral"
           />
           <ContactCard
-            icon={<Phone className="h-5 w-5" />}
-            label="phone"
-            value={resume.phone}
-            href={`tel:${resume.phone.replace(/\s/g, "")}`}
-            color="mint"
-          />
-          <ContactCard
             icon={<Linkedin className="h-5 w-5" />}
             label="linkedin"
             value="jiyajain23"
