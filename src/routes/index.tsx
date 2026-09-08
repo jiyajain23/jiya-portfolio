@@ -18,8 +18,6 @@ import {
   Download,
   Sparkles,
   Rocket,
-  Sun,
-  Moon,
   ExternalLink,
   Trophy,
   GraduationCap,
@@ -29,6 +27,8 @@ import {
   Wrench,
   Heart,
   Star,
+  Menu,
+  X,
 } from "lucide-react";
 import { resume } from "@/lib/resume";
 
@@ -125,7 +125,8 @@ function CursorBlob() {
 
 /* ------------------------------ Nav ------------------------------ */
 
-function Nav({ dark, setDark }: { dark: boolean; setDark: (v: boolean) => void }) {
+function Nav() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const links = [
     { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
@@ -153,14 +154,40 @@ function Nav({ dark, setDark }: { dark: boolean; setDark: (v: boolean) => void }
           </a>
         ))}
       </nav>
-      <button
-        onClick={() => setDark(!dark)}
-        data-cursor="hover"
-        aria-label="Toggle theme"
-        className="inline-flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink bg-sunshine transition hover:rotate-12"
-      >
-        {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-      </button>
+      <div className="flex items-center gap-2">
+        <button
+          onClick={() => setMenuOpen((open) => !open)}
+          data-cursor="hover"
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink bg-cyan md:hidden"
+        >
+          {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+        </button>
+      </div>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            id="mobile-navigation"
+            initial={{ opacity: 0, y: -8, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.98 }}
+            className="absolute left-0 right-0 top-[calc(100%+0.75rem)] flex flex-col gap-1 rounded-3xl border-2 border-ink bg-background p-3 shadow-[4px_4px_0_0_var(--ink)] md:hidden"
+          >
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMenuOpen(false)}
+                className="rounded-2xl px-4 py-3 text-sm font-semibold text-foreground/80 transition hover:bg-sunshine hover:text-ink"
+              >
+                {l.label}
+              </a>
+            ))}
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
@@ -221,11 +248,11 @@ function Hero() {
   ];
 
   return (
-    <section id="top" className="relative overflow-hidden pt-16 pb-32">
+    <section id="top" className="relative overflow-hidden pt-12 pb-24 sm:pt-16 sm:pb-32">
       <div className="grid-paper absolute inset-0 opacity-60" aria-hidden />
       <FloatingShapes />
 
-      <div className="relative mx-auto max-w-6xl px-6">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -233,6 +260,11 @@ function Hero() {
         >
           hi, hello, namaste 👋
         </motion.p>
+
+        <div className="mb-5 inline-flex items-center gap-2 rounded-full border-2 border-ink bg-card px-3 py-1.5 text-xs font-bold shadow-[3px_3px_0_0_var(--ink)]">
+          <span className="h-2 w-2 animate-pulse rounded-full bg-coral" />
+          Currently building with ML, NLP &amp; agentic AI
+        </div>
 
         <h1 className="font-display text-[clamp(3rem,10vw,8rem)] font-black leading-[0.95] tracking-tight pb-2">
           <RevealWord delay={0.1}>I&apos;m</RevealWord>{" "}
@@ -245,8 +277,7 @@ function Hero() {
         </h1>
 
         <div className="mt-6 flex flex-wrap items-center gap-3 text-2xl md:text-3xl">
-          <span className="font-display italic">a</span>
-          <div className="relative h-[1.6em] min-w-[420px] overflow-visible">
+          <div className="relative h-auto min-h-[1.6em] min-w-0 flex-1 overflow-visible sm:min-w-[420px] sm:flex-none">
             <AnimatePresence mode="wait">
               <motion.span
                 key={titleIdx}
@@ -254,7 +285,7 @@ function Hero() {
                 animate={{ y: 0, opacity: 1, rotate: 0 }}
                 exit={{ y: -40, opacity: 0, rotate: -4 }}
                 transition={{ type: "spring", stiffness: 220, damping: 20 }}
-                className="absolute inset-0 inline-flex items-center rounded-2xl border-2 border-ink bg-sunshine px-4 font-display font-bold whitespace-nowrap"
+                className="absolute inset-0 inline-flex w-full items-center justify-center rounded-2xl border-2 border-ink bg-sunshine px-3 text-center font-display text-xl font-bold sm:w-auto sm:justify-start sm:px-4 sm:text-3xl sm:whitespace-nowrap"
               >
                 {resume.rotatingTitles[titleIdx]}
               </motion.span>
@@ -845,13 +876,6 @@ function Contact() {
             color="coral"
           />
           <ContactCard
-            icon={<Phone className="h-5 w-5" />}
-            label="phone"
-            value={resume.phone}
-            href={`tel:${resume.phone.replace(/\s/g, "")}`}
-            color="mint"
-          />
-          <ContactCard
             icon={<Linkedin className="h-5 w-5" />}
             label="linkedin"
             value="jiyajain23"
@@ -937,15 +961,10 @@ function Footer() {
 /* ------------------------------ Root ------------------------------ */
 
 function Portfolio() {
-  const [dark, setDark] = useState(false);
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
-  }, [dark]);
-
   return (
     <div className="min-h-screen">
       <CursorBlob />
-      <Nav dark={dark} setDark={setDark} />
+      <Nav />
       <main>
         <Hero />
         <CurvedDivider color="bg-background" />

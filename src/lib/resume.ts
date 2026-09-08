@@ -2,7 +2,6 @@ export const resume = {
   name: "Jiya Jain",
   location: "New Delhi, IN",
   email: "jainjiya2312@gmail.com",
-  phone: "+91 9868357111",
   linkedin: "https://linkedin.com/in/jiyajain23",
   github: "https://github.com/jiyajain23",
   summary:
